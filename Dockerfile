@@ -15,9 +15,7 @@ RUN mkdir -p /opt/lib && \
     rm -f /upsource-$UPSOURCE_VERSION.zip
 
 RUN mv $UPSOURCE_HOME/conf /etc/upsource && \
-    mv $UPSOURCE_HOME/data $UPSOURCE_DATA_DIR/data && \
-	mv $UPSOURCE_HOME/backups $UPSOURCE_DATA_DIR/backups && \
-	mv $UPSOURCE_HOME/logs $UPSOURCE_DATA_DIR/logs && \
+	mkdir -p $UPSOURCE_DATA_DIR/data $UPSOURCE_DATA_DIR/backups $UPSOURCE_DATA_DIR/logs && \
 	ln -s /etc/upsource $UPSOURCE_HOME/conf && \
 	ln -s $UPSOURCE_DATA_DIR/data $UPSOURCE_HOME/data && \
 	ln -s $UPSOURCE_DATA_DIR/backups $UPSOURCE_HOME/backups && \ 
