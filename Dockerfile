@@ -23,7 +23,7 @@ RUN mv $UPSOURCE_HOME/conf /etc/upsource && \
 
 COPY conf/security/limits.conf /etc/security/limits.conf
 
-EXPOSE 8080
+EXPOSE 8080 7199
 
 VOLUME [ "/etc/upsource", "/var/lib/upsource" ]
 
